@@ -1,56 +1,28 @@
 <div class="contenedor__padre--contenido">
-  <div class="box__pelis">
-    <img src="./../../../assets/Fotos pelis/batman.jpg" alt="" srcset="" />
+  <div
+    class="box__pelis"
+    *ngFor="let movie of movies"
+    (click)="buscarId(movie.imdbID)">
+    <img [src]="movie.Poster" alt="" srcset="" />
     <div class="info__pelis">
-      <h2>Titulo</h2>
-      <h3>fecha</h3>
-      <h3>director</h3>
-      <h3>helenco</h3>
+      <h2>{{ movie.Title }}</h2>
+      <h3>{{ movie.Year }}</h3>
+      <h3>{{ movie.Type }}</h3>
     </div>
   </div>
-  <div class="box__pelis">
-    <img src="./../../../assets/Fotos pelis/marvel.jpg" alt="" srcset="" />
+</div>
+<div class="modal" *ngIf="movieFull.length > 0" (click)="salir()">
+  <div class="box__pelis grande" *ngFor="let movie of movieFull">
+    <img [src]="movie.Poster" alt="" srcset="" />
     <div class="info__pelis">
-      <h2>Titulo</h2>
-      <h3>fecha</h3>
-      <h3>director</h3>
-      <h3>helenco</h3>
-    </div>
-  </div>
-  <div class="box__pelis">
-    <img src="./../../../assets/Fotos pelis/zoo.jpg" alt="" srcset="" />
-    <div class="info__pelis">
-      <h2>Titulo</h2>
-      <h3>fecha</h3>
-      <h3>director</h3>
-      <h3>helenco</h3>
-    </div>
-  </div>
-  <div class="box__pelis">
-    <img src="./../../../assets/Fotos pelis/zoo.jpg" alt="" srcset="" />
-    <div class="info__pelis">
-      <h2>Titulo</h2>
-      <h3>fecha</h3>
-      <h3>director</h3>
-      <h3>helenco</h3>
-    </div>
-  </div>
-  <div class="box__pelis">
-    <img src="./../../../assets/Fotos pelis/batman.jpg" alt="" srcset="" />
-    <div class="info__pelis">
-      <h2>Titulo</h2>
-      <h3>fecha</h3>
-      <h3>director</h3>
-      <h3>helenco</h3>
-    </div>
-  </div>
-  <div class="box__pelis">
-    <img src="./../../../assets/Fotos pelis/marvel.jpg" alt="" srcset="" />
-    <div class="info__pelis">
-      <h2>Titulo</h2>
-      <h3>fecha</h3>
-      <h3>director</h3>
-      <h3>helenco</h3>
+      <h2>titulo: {{ movie.Title }}</h2>
+      <h3>lanzamiento: {{ movie.Released }}</h3>
+      <h3>Duracion: {{ movie.Runtime }}</h3>
+      <h3>Genero: {{ movie.Genre }}</h3>
+      <h3>Director: {{ movie.Director }}</h3>
+      <h3>Actores: {{ movie.Actors }}</h3>
+      <h3>Trama: {{ movie.Plot }}</h3>
+      <h3>tipo: {{ movie.Type }}</h3>
     </div>
   </div>
 </div>

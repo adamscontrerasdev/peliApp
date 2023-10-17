@@ -1,14 +1,13 @@
 <div class="header">
-    <div class="header--title">
-        <h1>A-DePelis</h1>
-        <div class="header--title--camaras">
-            <i class='bx bx-camera-movie'></i>
-            <i class='bx bx-camera-movie black'></i>
-        </div>
+  <div class="header--title">
+    <h1>A-DePelis</h1>
+    <div class="header--title--camaras">
+      <i class="bx bx-camera-movie"></i>
+      <i class="bx bx-camera-movie black"></i>
     </div>
-    <div class="header--busqueda">
-        <i class='bx bx-search'></i>
-        <input type="text" placeholder="Buscar">
-    </div>
-    
+  </div>
+  <div class="header--busqueda">
+    <i class="bx bx-search" (click)="enviar()"></i>
+      <input type="text" [(ngModel)]="name" placeholder="Buscar" />
+  </div>
 </div>

@@ -16,8 +16,12 @@
     --gris:#CDD0D9;
 }
 
-body{
-    background: var(--negro);
+html{
+    background: var(--terciario);
+}
+
+::-webkit-scrollbar{
+    display: none;
 }
 
 
